@@ -2,8 +2,14 @@
 include "koneksi.php";
 
 $disposisi = isset($_GET['disposisi']) ? htmlspecialchars($_GET['disposisi']) : null; 
+$id_daftar_pemohon = isset($_GET['id_daftar_pemohon']) ? htmlspecialchars($_GET['id_daftar_pemohon']) : null; 
 
-$query = "SELECT * FROM daftar_pemohon WHERE status = 2 AND disposisi = '$disposisi'";
+if($id_daftar_pemohon != null){
+    $query = "SELECT * FROM daftar_pemohon WHERE status = 2 AND disposisi = '$disposisi' AND id_daftar_pemohon = '$id_daftar_pemohon'";
+} else {
+    $query = "SELECT * FROM daftar_pemohon WHERE status = 2 AND disposisi = '$disposisi'";
+}
+
 $result     = $koneksi->query($query);
 
 if($result->num_rows > 0){

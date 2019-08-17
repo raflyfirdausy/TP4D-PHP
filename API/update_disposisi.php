@@ -17,12 +17,12 @@ if($id_daftar_pemohon != null){
     } else {
         echo json_encode(array(
             "status" => 0,
-            "result" => "Terjadi Kesalahan Update"
+            "result" => "$koneksi->error"
         ));
     }
 } else {
     echo json_encode(array(
         "status" => 0,
-        "result" => "Terjadi Kesalahan id Pendaftar"
+        "result" => "$koneksi->error"
     ));
 }

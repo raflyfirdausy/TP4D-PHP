@@ -1,2 +1,0 @@
-# TP4D-PHP
-PHP FOR TP4D

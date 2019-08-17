@@ -20,7 +20,7 @@ if($id_daftar_pemohon != null){
     } else {
         echo json_encode(array(
             "status" => 0,
-            "result" => "Foto dookumen tidak ditemukan"
+            "result" => "Foto dokumen tidak ditemukan"
         ));
     }
 } else {

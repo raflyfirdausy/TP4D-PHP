@@ -3,7 +3,7 @@ include "koneksi.php";
 
 $disposisi = isset($_GET['disposisi']) ? htmlspecialchars($_GET['disposisi']) : null; 
 
-$query = "SELECT * FROM daftar_pemohon WHERE status = 3 AND disposisi = '$disposisi'";
+$query = "SELECT * FROM daftar_pemohon WHERE status = 3 AND disposisi = '$disposisi' ORDER BY id_daftar_pemohon DESC";
 $result     = $koneksi->query($query);
 
 if($result->num_rows > 0){

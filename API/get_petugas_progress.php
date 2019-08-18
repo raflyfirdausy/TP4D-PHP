@@ -5,9 +5,9 @@ $disposisi = isset($_GET['disposisi']) ? htmlspecialchars($_GET['disposisi']) : 
 $id_daftar_pemohon = isset($_GET['id_daftar_pemohon']) ? htmlspecialchars($_GET['id_daftar_pemohon']) : null; 
 
 if($id_daftar_pemohon != null){
-    $query = "SELECT * FROM daftar_pemohon WHERE status = 2 AND disposisi = '$disposisi' AND id_daftar_pemohon = '$id_daftar_pemohon'";
+    $query = "SELECT * FROM daftar_pemohon WHERE status = 2 AND disposisi = '$disposisi' AND id_daftar_pemohon = '$id_daftar_pemohon' ORDER BY id_daftar_pemohon DESC";
 } else {
-    $query = "SELECT * FROM daftar_pemohon WHERE status = 2 AND disposisi = '$disposisi'";
+    $query = "SELECT * FROM daftar_pemohon WHERE status = 2 AND disposisi = '$disposisi' ORDER BY id_daftar_pemohon DESC";
 }
 
 $result     = $koneksi->query($query);

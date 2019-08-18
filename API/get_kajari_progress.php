@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
 
-$query = "SELECT * FROM daftar_pemohon WHERE status = 1 OR status = 2";
+$query = "SELECT * FROM daftar_pemohon WHERE status = 1 OR status = 2 ORDER BY id_daftar_pemohon DESC";
 
 $result     = $koneksi->query($query);
 

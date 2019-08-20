@@ -15,7 +15,7 @@ $result     = $koneksi->query($query);
 if($result->num_rows > 0){
     $result_ = array();
     while($data = $result->fetch_assoc()){
-        $data['foto_dokumen'] = "http://localhost/tp4d/api/image/" . $data['foto_dokumen'];
+        $data['foto_dokumen'] = $root . "tp4d/api/image/" . $data['foto_dokumen'];
         array_push($result_, $data);
     }
 

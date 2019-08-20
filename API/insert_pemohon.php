@@ -105,14 +105,28 @@ include "koneksi.php";
 
             $result  = $koneksi->query($query);
             if($result != null){
-                echo json_encode(array(
-                    "status" => 1,
-                    "result" => "Berhasil mengajukan permohonan"
-                ));
+
+                $queryGetNoRegis = "SELECT no_regis FROM daftar_pemohon WHERE id_daftar_pemohon = (SELECT LAST_INSERT_ID())";
+                $resultQueryNoRegis = $koneksi->query($queryGetNoRegis);
+
+                if($resultQueryNoRegis != null){
+                    echo json_encode(array(
+                        "status" => 1,
+                        "result" => "Berhasil mengajukan permohonan",
+                        "no_regis" => $resultQueryNoRegis->fetch_assoc()["no_regis"]
+                    ));
+                } else {
+                    echo json_encode(array(
+                        "status" => 1,
+                        "result" => "Berhasil mengajukan permohonan",
+                        "no_regis" => $koneksi->error
+                    ));
+                }
             } else {
                 echo json_encode(array(
                     "status" => 0,
-                    "result" => $koneksi->error
+                    "result" => $koneksi->error,
+                    "no_regis" => "Tidak Ditemukan"
                 ));
             }
         } else {

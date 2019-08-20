@@ -9,8 +9,7 @@ if($id_daftar_pemohon != null){
     if($result->num_rows > 0){
         $result_ = array();
         while($data = $result->fetch_assoc()){
-            // $data['foto'] = "http://localhost/tp4d/api/dokumentasi/" . $data['foto'];
-            $data['foto'] = "http://192.168.1.18/tp4d/api/dokumentasi/" . $data['foto'];
+            $data['foto'] = $root . "tp4d/api/dokumentasi/" . $data['foto'];
             array_push($result_, $data);
         }
         echo json_encode(array(

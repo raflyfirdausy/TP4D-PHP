@@ -24,6 +24,11 @@ $p_pho_penyerahan_hasil = isset($_POST['p_pho_penyerahan_hasil']) ? $_POST['p_ph
 
 $share_lokasi = isset($_POST['share_lokasi']) ? $_POST['share_lokasi'] : null;
 $serah_terima = isset($_POST['serah_terima']) ? $_POST['serah_terima'] : null;
+
+$latitude = isset($_POST['latitude']) ? $_POST['latitude'] : null;
+$longitude = isset($_POST['longitude']) ? $_POST['longitude'] : null;
+
+
 $is_serah_terima = isset($_POST['is_serah_terima']) ? $_POST['is_serah_terima'] : 0;
 
 if($is_serah_terima == 0){
@@ -56,6 +61,8 @@ SET
     `p_mc_pelaksanaan` = '$p_mc_pelaksanaan',
     `p_pho_penyerahan_hasil` = '$p_pho_penyerahan_hasil',
     `share_lokasi` = '$share_lokasi',
+    `latitude` = '$latitude',
+    `longitude` = '$longitude',
     `serah_terima` = '$serah_terima'
 WHERE
     `id_daftar_pemohon` = '$id_daftar_pemohon'";

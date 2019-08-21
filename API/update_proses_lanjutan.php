@@ -31,7 +31,7 @@ $longitude = isset($_POST['longitude']) ? $_POST['longitude'] : null;
 
 $is_serah_terima = isset($_POST['is_serah_terima']) ? $_POST['is_serah_terima'] : 0;
 
-if($is_serah_terima == 0){
+if($is_serah_terima === "0"){
     $status = 2;
 } else {
     $status = 3;
@@ -72,12 +72,12 @@ if ($id_daftar_pemohon != null) {
     if($koneksi->affected_rows > 0){
         echo json_encode(array(
             "status" => 1,
-            "result" => "Berhasil Update Permohonan"
+            "result" => "Berhasil Update Permohonan" . "$is_serah_terima"
         ));
     } else {
         echo json_encode(array(
             "status" => 0,
-            "result" => "$koneksi->error"
+            "result" => "$koneksi->error" . "awawawaw"
         ));
     }
 } else {

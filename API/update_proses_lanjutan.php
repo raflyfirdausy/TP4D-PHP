@@ -72,7 +72,7 @@ if ($id_daftar_pemohon != null) {
     if($koneksi->affected_rows > 0){
         echo json_encode(array(
             "status" => 1,
-            "result" => "Berhasil Update Permohonan" . "$is_serah_terima"
+            "result" => "Berhasil Update Permohonan"
         ));
     } else {
         echo json_encode(array(

@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
 
     echo json_encode(array(
         "status" => 1,
-        "result" => $result_
+        "result" => $result_ 
     ));
 } else {
     echo json_encode(array(
